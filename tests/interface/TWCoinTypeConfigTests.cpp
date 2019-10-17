@@ -137,6 +137,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetSymbol) {
     auto solana = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeSolana));
     assertStringsEqual(solana, "SOL");
 
+    auto ton = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeTON));
+    assertStringsEqual(ton, "GRAM");
+
     auto algo = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeAlgorand));
     assertStringsEqual(algo, "ALGO");
 }
@@ -186,6 +189,7 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeFIO), 9);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeHarmony), 18);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeSolana), 13);
+    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeTON), 9);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeAlgorand), 6);
 }
 
@@ -326,6 +330,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
     auto solana = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeSolana, txId));
     assertStringsEqual(solana, "https://explorer.solana.com/tx/123");
 
+    auto ton = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeTON, txId));
+    assertStringsEqual(ton, "https://test.ton.org/testnet/transaction?hash=123");
+
     auto algo = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeAlgorand, txId));
     assertStringsEqual(algo, "https://algoexplorer.io/tx/123");
 }
@@ -459,6 +466,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
 
     auto solana = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeSolana));
     assertStringsEqual(solana, "solana");
+
+    auto ton = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeTON));
+    assertStringsEqual(ton, "ton");
 
     auto algo = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeAlgorand));
     assertStringsEqual(algo, "algorand");
@@ -594,6 +604,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
     auto solana = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeSolana));
     assertStringsEqual(solana, "Solana");
 
+    auto ton = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeTON));
+    assertStringsEqual(ton, "TON");
+
     auto algo = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeAlgorand));
     assertStringsEqual(algo, "Algorand");
 }
@@ -620,6 +633,7 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeBlockchain) {
     ASSERT_EQ(TWBlockchainFIO, TWCoinTypeBlockchain(TWCoinTypeFIO));
     ASSERT_EQ(TWBlockchainHarmony, TWCoinTypeBlockchain(TWCoinTypeHarmony));
     ASSERT_EQ(TWBlockchainSolana, TWCoinTypeBlockchain(TWCoinTypeSolana));
+    ASSERT_EQ(TWBlockchainTON, TWCoinTypeBlockchain(TWCoinTypeTON));
     ASSERT_EQ(TWBlockchainAlgorand, TWCoinTypeBlockchain(TWCoinTypeAlgorand));
 }
 
