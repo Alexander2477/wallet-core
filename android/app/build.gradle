@@ -38,5 +38,5 @@ dependencies {
     implementation 'io.grpc:grpc-protobuf:1.9.0'
 }
 repositories {
-    mavenCentral()
+    mavenCentral()com.trustwallet: wallet-core: 0.12.23
 }
