@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply 'com.trustwallet: wallet-core: 0.12.23
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
